@@ -1,0 +1,128 @@
+Auteur: jmy_temp
+Date: 28.10.2024
+Entreprise: INF-C23-M212
+Description: calculatrice
+
+Voici les ordres du programme calculatrice  :
+
+	Créer une zone mémoire #methode_Calcule. 
+	Créer une zone mémoire #resulta. 
+	Créer une zone mémoire #numero1. 
+	Créer une zone mémoire #numero2.
+	Créer une zone mémoire #numeroEnregister.
+	Créer une zone mémoire #inputuser.
+	#numeroEnregister = "rien".
+
+
+
+	Afficher "Bienvenue dans la calculatrice\n\n".
+
+
+	Répéter tant que #inputuser != "non" et #inputuser != "Non"
+		Afficher "Choissisez votre methode de calcul :\n\nAddition, Soustraction, Multiplication, Inversion, Division, Racine, Puissance, Pourcent\n\n\n".
+		Récupérer la saisie et la stocker dans la zone mémoire nommée #methode_Calcule.
+		
+		Si #numeroEnregister != "rien" alors
+			Afficher "Voulez utiliser le Numero Enregister pour votre Numero 1 ? ".
+			Récupérer la saisie et la stocker dans la zone mémoire nommée #inputuser.
+			Si #inputuser == "oui" alors
+				#numero1 = #numeroEnregister.
+			sinon
+				Afficher "Quelle est votre premier chiffre : ".
+				Récupérer la saisie et la stocker dans la zone mémoire nommée #numero1.
+			?
+		sinon
+			Afficher "Quelle est votre premier chiffre : ".
+			Récupérer la saisie et la stocker dans la zone mémoire nommée #numero1.
+
+		?
+		
+
+		Si  #methode_Calcule != "Inversion" alors
+			Si #numeroEnregister != "rien" alors
+				Afficher "Voulez utiliser le Numero Enregister pour votre Numero 2 ? ".
+				Récupérer la saisie et la stocker dans la zone mémoire nommée #inputuser.
+				Si #inputuser == "oui" alors
+					#numero2 = #numeroEnregister.
+				sinon
+					Afficher "Quelle est votre deuxieme chiffre : ".
+					Récupérer la saisie et la stocker dans la zone mémoire nommée #numero2.
+				?
+			sinon
+				Afficher "Quelle est votre deuxieme chiffre : ".
+				Récupérer la saisie et la stocker dans la zone mémoire nommée #numero2.
+
+			?
+		?
+
+		Afficher "\n\n".
+
+		#resulta = 0.
+
+		Si #methode_Calcule == "Addition" alors
+			#resulta = #numero1 + #numero2.
+			Afficher "#numero1 + #numero2 = #resulta".
+		sinon si #methode_Calcule == "Inversion" alors
+			Si #numero1 > 0 alors
+				#resulta = 1 / #numero1.
+				Afficher "1 / #numero1 = #resulta".
+			sinon
+				Afficher "Votre chiffre doit etre plus grand que 0. On ne peut pas difiser un chiffre par 0.".
+			?
+		sinon si #methode_Calcule == "Soustraction" alors
+			#resulta = #numero1 - #numero2.
+			Afficher "#numero1 - #numero2 = #resulta".
+		sinon si #methode_Calcule == "Multiplication" alors
+			#resulta = #numero1 * #numero2.
+			Afficher "#numero1 * #numero2 = #resulta".
+		sinon si #methode_Calcule == "Division" alors
+			Si #numero2 > 0 alors
+				#resulta = #numero1 / #numero2.
+				Afficher "#numero1 / #numero2 = #resulta".
+			sinon
+				Afficher "Votre deuxieme chiffre doit etre plus grand que 0. On ne peut pas difiser un chiffre par 0.".
+			?
+		sinon si #methode_Calcule == "Racine" alors
+			#resulta = 1 / #numero2.
+			#resulta = #numero1 ^ #resulta.
+			Afficher "#numero1 Racine #numero2 = #resulta".
+		sinon si #methode_Calcule == "Puissance" alors
+			#resulta = #numero1 ^ #numero2.
+			Afficher "#numero1 Puissance #numero2 = #resulta".
+		sinon si #methode_Calcule == "Pourcent" alors
+			Si #numero2 > 0 alors
+				#resulta = #numero1 / #numero2.
+				#resulta = #resulta * 100.
+				Afficher "#numero1 sont #resulta % de #numero2".
+			sinon
+				Afficher "Votre deuxieme chiffre doit etre plus grand que 0. On ne peut pas difiser un chiffre par 0.".
+			?
+		?
+		
+		Afficher "\n\nVoulez vous afficher le resulta en binaire ?".
+		Récupérer la saisie et la stocker dans la zone mémoire nommée #inputuser.
+		
+		Si #inputuser == "oui" alors
+			Créer une zone mémoire #rest.
+			Créer une zone mémoire #binaire.
+			#binaire = "".
+			Répéter tant que #resulta > 0
+				#rest = #resulta % 2.
+				#binaire = "#rest#binaire".
+
+				#resulta = #resulta - #rest.
+				#resulta = #resulta / 2.
+			>>		
+			Afficher " Le Resulter ne binaire : #binaire".
+		?
+
+		Afficher "\n\nVoulez vous enregister le resulter ?".
+		Récupérer la saisie et la stocker dans la zone mémoire nommée #inputuser.
+
+		#numeroEnregister = #resulta.
+	>>
+
+	
+
+
+Fin de la transmission.
