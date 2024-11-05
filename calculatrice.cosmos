@@ -7,6 +7,7 @@ Voici les ordres du programme calculatrice  :
 
 	Créer une zone mémoire #methode_Calcule. 
 	Créer une zone mémoire #resulta. 
+	Créer une zone mémoire #numbin. 
 	Créer une zone mémoire #numero1. 
 	Créer une zone mémoire #numero2.
 	Créer une zone mémoire #numeroEnregister.
@@ -103,15 +104,16 @@ Voici les ordres du programme calculatrice  :
 		Récupérer la saisie et la stocker dans la zone mémoire nommée #inputuser.
 		
 		Si #inputuser == "oui" alors
+			#numbin = #resulta.
 			Créer une zone mémoire #rest.
 			Créer une zone mémoire #binaire.
 			#binaire = "".
-			Répéter tant que #resulta > 0
-				#rest = #resulta % 2.
+			Répéter tant que #numbin > 0
+				#rest = #numbin % 2.
 				#binaire = "#rest#binaire".
 
-				#resulta = #resulta - #rest.
-				#resulta = #resulta / 2.
+				#numbin = #numbin - #rest.
+				#numbin = #numbin / 2.
 			>>		
 			Afficher " Le Resulter ne binaire : #binaire".
 		?
